@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="js/login.js" defer></script>
+</head>
+
+<body>
+
+<h1>Welcome</h1>
+
+<div class="login-container fade"> <!-- added the fade class for initial transition effect -->
+    <p id="name-prompt">What is your name?</p>  <!-- Container for the "What is your name?" text -->
+    <input type="text" id="username-input" placeholder="Enter your name...">
+    <p id="habit-prompt" class="hidden">Hello <span id="username-display"></span>, what habits would you like to track?</p>
+    <input type="text" id="habit-input" placeholder="Enter a habit..." class="hidden">
+    <ul id="habit-list" class="hidden"></ul>
+</div>
+
+<button id="done-btn" class="hidden">Done</button>
+
+</body>
+
+</html>
