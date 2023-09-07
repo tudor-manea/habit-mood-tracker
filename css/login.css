@@ -1,0 +1,70 @@
+.login-container.initial {
+    max-height: 120px;
+}
+
+.login-container.habits-display {
+    max-height: none;
+}
+
+.login-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    margin-top: 50px;
+    height: auto; /* changed from 120px */
+    overflow: hidden; 
+    transition: height 0.5s;
+}
+
+input[type="text"] {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.fade {
+    transition: opacity 0.5s linear;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
