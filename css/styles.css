@@ -1,0 +1,200 @@
+:root {
+    --box-width: 100px;
+    --box-height: 140px;
+    --title-height: 40px;
+    --checkbox-size: 80px;
+    --unchecked-color: #ffffff;
+    --checked-color: #4CAF50;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* centers main container vertically */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #E8F8F5;
+    font-size: 16px; /* Setting a base font-size */
+}
+
+h1 {
+    font-size: 6rem; 
+    color: #333;
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: -100px;  /* Adjust this value to position the title */
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.boxes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: calc(4 * var(--box-width) + 8 * 10px);
+    margin-bottom: 20px;
+}
+
+.tickable-square {
+    display: inline-block;
+    width: var(--box-width);
+    height: var(--box-height);
+    margin: 10px;
+    text-align: center;
+    vertical-align: top;
+    position: relative;
+}
+
+.tickable-square::before {
+    content: attr(data-label);
+    display: block;
+    height: var(--title-height);
+    line-height: var(--title-height);
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tickable-square::after {
+    content: "";
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+    display: block;
+    margin: 0 auto;
+    background-color: var(--unchecked-color);
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tickable-square:hover::after {
+    background-color: rgba(76, 175, 80, 0.7);
+}
+
+.tickable-square.active::after {
+    background-color: var(--checked-color);
+}
+
+.progress-circle-container {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 100px; /* Adjust this value to move the circle further down */
+}
+
+.circle-progress {
+    transition: stroke-dashoffset 0.3s ease, stroke 0.5s ease;
+}
+
+/* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 3rem; /* Adjust font-size for mobile */
+    }
+
+    :root {
+        /* Reduce the sizes of the boxes and progress circle for smaller screens */
+        --box-width: 80px;
+        --box-height: 112px;
+        --title-height: 32px;
+        --checkbox-size: 64px;
+    }
+}
+
+
+.landing-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.landing-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.landing-btn:hover {
+    background-color: #388E3C;
+}
+
+.emojis-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: calc(3 * var(--box-width) + 6 * 10px); /* adjusted for 3 emojis per row */
+    margin-bottom: 20px;
+}
+
+.emoji {
+    display: inline-block;
+    width: var(--box-width);
+    height: var(--box-height);
+    margin: 10px;
+    text-align: center;
+    font-size: 5rem; /* Adjust based on the required size of emojis */
+    opacity: 0.3;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.emoji:hover {
+    opacity: 0.7;
+}
+
+.emoji.active {
+    opacity: 1;
+}
+
+/* Styles specific to the login page */
+.login-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
